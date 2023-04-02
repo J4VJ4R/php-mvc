@@ -1,9 +1,17 @@
 <h1>Página con mvc</h1>
 <?php
-    require_once 'controllers/Usuarios.php';
-    if(isset($_GET['controller']) && class_exists($_GET['controller'])){
-        $controlador = $_GET['controller'];
-        $controlador = new $controlador();
+    require_once 'controllers/UsuariosController.php';
+    require_once 'controllers/NotaController.php';
+
+    if(isset($_GET['controller'])){
+        $nombre_controlador = $_GET['controller'].'Controller';
+    }else{
+        echo "No existe la página que buscas";
+        exit;
+    }
+
+    if(class_exists($nombre_controlador)){
+        $controlador = new $nombre_controlador();
 
         if(isset($_GET['action']) && method_exists($controlador, $_GET['action'])){
             $action = $_GET['action'];

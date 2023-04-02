@@ -1,6 +1,7 @@
 <?php
+require_once 'ModeloBase.php';
 
-class Usuario{
+class Usuario extends ModeloBase{
     public $nombre;
     public $apellido;
     public $email;
@@ -87,7 +88,5 @@ class Usuario{
         return $this;
     }
 
-    public function getAll(){
-        return "Sacando todos los usuarios de la db";
-    }
+    
 }
