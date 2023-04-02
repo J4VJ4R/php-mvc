@@ -1,8 +1,6 @@
 <h1>Página con mvc</h1>
 <?php
-    require_once 'controllers/UsuariosController.php';
-    require_once 'controllers/NotaController.php';
-
+    require_once 'autoload.php';
     if(isset($_GET['controller'])){
         $nombre_controlador = $_GET['controller'].'Controller';
     }else{
