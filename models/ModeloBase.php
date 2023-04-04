@@ -7,8 +7,8 @@ class ModeloBase{
         $this->db = Database::conectar();
     }
     
-    public function getAll(){
-        var_dump($this->db);
-        return "Sacando todos los usuarios de la db";
+    public function getAll($tabla){
+        $query = $this->db->query("SELECT * FROM $tabla ORDER BY id DESC");
+        return $query;
     }
 }

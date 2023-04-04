@@ -11,6 +11,7 @@ class NotaController extends ModeloBase{
         $nota->setNombre("Jaime");
         $nota->setContenido("Hola mundo con PHP MVC");
 
+        $notas = $nota->getAll('notas');
         //cargamos vista
         require_once 'views/nota/listar.php';
     }
