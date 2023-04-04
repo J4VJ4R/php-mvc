@@ -7,7 +7,13 @@ class Usuario extends ModeloBase{
     public $email;
     public $password;
     
-
+    /**
+     * Conection to db
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
     /**
      * Get the value of nombre
      */ 
