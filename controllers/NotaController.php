@@ -8,15 +8,24 @@ class NotaController extends ModeloBase{
 
         //cargamos obejto y acciones del controlador
         $nota = new Nota();
-        $nota->setNombre("Jaime");
-        $nota->setContenido("Hola mundo con PHP MVC");
-
         $notas = $nota->getAll('notas');
         //cargamos vista
         require_once 'views/nota/listar.php';
     }
 
     public function crear(){
+        // Llamo al modelo
+        require_once 'models/nota.php';
+
+        $nota = new Nota();
+        $nota->setUsuario_id(1);
+        $nota->setTitulo("nota desde php con mvc");
+        $nota->setDescripcion("Descripción de mi nota");
+        $guardar = $nota->guardar();
+
+        $nota->db->error;
+        die();
+        header("Locatioon: index.php/?controller=Nota&action=listar");
 
     }
 
