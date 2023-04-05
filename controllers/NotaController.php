@@ -15,7 +15,7 @@ class NotaController extends ModeloBase{
 
     public function crear(){
         // Llamo al modelo
-        require_once 'models/nota.php';
+        require_once 'models/Nota.php';
 
         $nota = new Nota();
         $nota->setUsuario_id(1);
@@ -23,9 +23,8 @@ class NotaController extends ModeloBase{
         $nota->setDescripcion("Descripción de mi nota");
         $guardar = $nota->guardar();
 
-        $nota->db->error;
-        die();
-        header("Locatioon: index.php/?controller=Nota&action=listar");
+       
+        header("Location: index.php/?controller=Nota&action=listar");
 
     }
 
